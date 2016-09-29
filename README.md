@@ -15,13 +15,13 @@ When you call the decryption function it will essentially do the reverse of this
 
 Using a POST on /encryptionService/encryption and passing this body:
 
-{
-	"keyComponents": ["c023d51f-8b8b-4025-9c77-268c41acad9c",
-	"7f554a7c-b815-4c5b-95c4-e4dcac5cc627",
-	"7f8b40c5-331c-459a-8423-af9b4325327c"],
-	
-	"encryptionString":"n0t s3Cure Y3t",
-}
+	{
+		"keyComponents": ["c023d51f-8b8b-4025-9c77-268c41acad9c",
+		"7f554a7c-b815-4c5b-95c4-e4dcac5cc627",
+		"7f8b40c5-331c-459a-8423-af9b4325327c"],
+
+		"encryptionString":"n0t s3Cure Y3t",
+	}
 
 should get you a response along these lines : 
 U2FsdGVkX1+pHgJ6pr8UCgHAovC/a1phQD4YLf7ggVo=
@@ -31,13 +31,13 @@ although the result will likely be different each time
 
 taking that value you received and putting it in a value called encryptedString as such:
 
-{
-	"keyComponents": ["c023d51f-8b8b-4025-9c77-268c41acad9c",
-	"7f554a7c-b815-4c5b-95c4-e4dcac5cc627",
-	"7f8b40c5-331c-459a-8423-af9b4325327c"],
+	{
+		"keyComponents": ["c023d51f-8b8b-4025-9c77-268c41acad9c",
+		"7f554a7c-b815-4c5b-95c4-e4dcac5cc627",
+		"7f8b40c5-331c-459a-8423-af9b4325327c"],
 	
-	"encryptedString":"U2FsdGVkX1+pHgJ6pr8UCgHAovC/a1phQD4YLf7ggVo="
-}
+		"encryptedString":"U2FsdGVkX1+pHgJ6pr8UCgHAovC/a1phQD4YLf7ggVo="
+	}
 
 and using a POST body to send it to /encryptionService/decryption should get you the result back of your original password.
 
@@ -51,7 +51,16 @@ Instead of listing them out, you can simply call this API and get your password 
 
 ## Installation
 
-In order to use this project simply 
+This project requires at least node 4.5.0
+
+In order to use this project simply run:
+
+	git clone https://github.com/LeaveItToBeaves/PasswordEncryptionAPI.git
+	cd PasswordEncryptionAPI
+	npm install
+	npm start
+
+The API will now be running on your local machine on port 3000
 
 
 ## API Reference
